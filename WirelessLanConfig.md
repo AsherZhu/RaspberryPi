@@ -107,3 +107,6 @@ network={
     psk=”密码“}
 ```
 重启后就可以连上这个不广播SSID的无线网络。
+
+
+注：转载自https://my.oschina.net/u/2306127/blog/392442
