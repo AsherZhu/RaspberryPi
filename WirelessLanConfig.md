@@ -76,7 +76,7 @@ sudo /etc/init.d/networking restart
 
 附注：上述两种方法我们都是使用的DHCP动态IP，如果要设置静态ip方法和以及连接隐藏SSID AP的方法：
 
-####（1）设置静态ip
+#### （1）设置静态ip
 修改文件sudo nano /etc/network/interfaces
 ```$xslt
 auto lo
@@ -92,7 +92,7 @@ gateway 192.168.1.1
 dns-nameservers x.x.x.x #你的本地dns地址
 ```
 
-####（2）连接WIFI不广播隐藏SSID
+#### （2）连接WIFI不广播隐藏SSID
 在ssid=”XXXX”下面加一行scan_ssid=1后重启,具体如下：
 ```$xslt
 sudo nano /etc/wpa_supplicant/wpa_supplicant.conf
