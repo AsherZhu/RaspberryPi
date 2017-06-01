@@ -1,4 +1,4 @@
-#第一种方法:
+### 第一种方法:
 通过配置 /etc/network/interfaces 文件实现
 修改后文件内容如下：
 
@@ -43,7 +43,8 @@ netmask 255.255.255.0        #IP掩码，为0的部分地址可通过。
 gateway 192.168.1.1          #网关，一般就是路由器的主地址。
 dns-nameservers x.x.x.x      #你的本地dns地址
 ```
-第二种方法：修改sudo nano /etc/wpa_supplicant/wpa_supplicant.conf实现 ps:与安卓手机wifi配置文件几乎相同
+### 第二种方法：
+修改sudo nano /etc/wpa_supplicant/wpa_supplicant.conf实现 ps:与安卓手机wifi配置文件几乎相同
 ```$xslt
 ctrl_interface=/var/run/wpa_supplicant
 ctrl_interface_group=0
@@ -55,6 +56,7 @@ network={
     pairwise=TKIP
     group=TKIP
     psk=”WIFI密码“
+    priority=200
     }
 ```
 然后修改文件sudo nano /etc/network/interfaces,修改后的文件内容如下：
