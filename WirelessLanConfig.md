@@ -59,14 +59,18 @@ network={
     priority=200
     }
 ```
-然后修改文件sudo nano /etc/network/interfaces,修改后的文件内容如下：
+然后修改文件sudo nano /etc/network/interfaces,
+>iface wlan0 inet manual
+
+ 改为
+>iface wlan0 inet dhcp
+
+修改后的文件内容如下：
 ```$xslt
-auto lo
-iface lo inet loopback
-iface eth0 inet dhcp.auto wlan0
+allow-hotplug wlan0
 iface wlan0 inet dhcp
-pre-up wpa_supplicant -B -Dwext -iwlan0 -c/etc/wpa_supplicant/wpa_supplicant.conf
-post-down killall -q wpa_supplicant
+    wpa-conf /etc/wpa_supplicant/wpa_supplicant.conf
+
 ```
 修改完成后，使用以下命令重启网络
 ```$xslt
